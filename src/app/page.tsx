@@ -1,8 +1,9 @@
-
+import React from 'react';
+import AuthPage from '../containers/auth';
 export default function Home() {
   return (
-    <main>
-      <p>test</p>
-    </main>
+    <>
+      <AuthPage/>
+    </>
   );
 }

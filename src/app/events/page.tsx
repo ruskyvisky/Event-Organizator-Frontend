@@ -1,7 +1,10 @@
 import React from 'react'
+import EventListPage from '@/containers/dashboard/'
 
-export default function page() {
-  return (
-    <>page</>
+const page = () => {
+  return(
+ <EventListPage/>
   )
 }
+
+export default page
