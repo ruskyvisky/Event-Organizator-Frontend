@@ -1,10 +1,10 @@
 import React from 'react'
 import { Button, ButtonGroup, Card, CardBody, CardFooter, Divider, Heading,  Stack, Text } from '@chakra-ui/react'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { MdAccessTime } from "react-icons/md";
 import { MdLocationOn } from "react-icons/md";
-
-const eventCard = () => {
+const EventCard = () => {
+  const router = useRouter()
   return (
     <Card maxW='sm'  margin={5}>
     <CardBody>
@@ -36,7 +36,13 @@ const eventCard = () => {
         <Button variant='solid' colorScheme='orange' borderRadius='md'>
           Katıl
         </Button>
-        <Button variant={'outline'} colorScheme='orange' borderRadius='md'>
+        <Button variant={'outline'} colorScheme='orange' borderRadius='md'
+        onClick={
+          () => {
+            router.push('/events/1')
+          }
+        }
+        >
             Detaylar
         </Button>
 
@@ -47,4 +53,4 @@ const eventCard = () => {
   )
 }
 
-export default eventCard
+export default EventCard
