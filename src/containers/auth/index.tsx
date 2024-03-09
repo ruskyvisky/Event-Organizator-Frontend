@@ -3,17 +3,20 @@ import React, { useState } from 'react';
 import { Box, Input, Button, Text, Center, Stack , InputGroup, InputRightElement} from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
 import { FormData } from '@/interfaces/formData';
+import { useRouter } from 'next/navigation'
 
 
 const App = () => {
   const [login, setLogin] = useState(true);
   const [show, setShow] = React.useState(false);
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
-
+  const router = useRouter();
   const handleClick = () => setShow(!show);
 
   const handleLogin = (data: FormData) => {
     console.log(data); // Giriş verilerini konsola yazdır
+    router.push('/events');
+
   };
 
   const handleRegister = (data: FormData) => {
