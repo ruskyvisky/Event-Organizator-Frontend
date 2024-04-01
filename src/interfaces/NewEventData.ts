@@ -1,4 +1,4 @@
-interface NewEventData {
+interface INewEventData {
     isPublic : boolean,
     name : string,
     description : string,
