@@ -1,8 +1,6 @@
 import { Box, Button, Heading, Text } from "@chakra-ui/react";
-import { MdOutlineCalendarMonth } from "react-icons/md";
-import { MdAccessTime } from "react-icons/md";
-import { MdLocationOn } from "react-icons/md";
-
+import  EventInfoCard  from "./components/EventInfoCard/EventInfoCard";
+import Comments from "./components/Comments/Comment";
 function EventDetailPage() {
   return (
     <Box maxW="600px" m="auto" p="4">
@@ -22,23 +20,8 @@ function EventDetailPage() {
           </Box>
           <Button colorScheme="orange">Katıl</Button>
         </Box>
-        <Box>
-          <Box mt={5} bg="gray.100" p="4" borderRadius="md" display={'flex'} flexDirection={'row'} >
-          <Box m="2" p={5}>
-            <MdOutlineCalendarMonth  size={25}/>
-            <Text>25 Mart 2024</Text>
-          </Box>
-          <Box m="2" p={5}>
-          <MdAccessTime size={25} />
-            <Text>19.00</Text>
-          </Box>
-         <Box m="2" p={5}>
-         <MdLocationOn size={25} />
-
-            <Text>Istanbul, Türkiye</Text>
-          </Box>  
-          </Box>
-        </Box>
+       <EventInfoCard />
+       <Comments/>
       </Box>
     </Box>
   );

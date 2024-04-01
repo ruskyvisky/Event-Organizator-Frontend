@@ -4,23 +4,23 @@ import { Box, Input, Button, Text, Center, Stack , InputGroup, InputRightElement
 import { useForm } from 'react-hook-form';
 import { FormData } from '@/interfaces/formData';
 import { useRouter } from 'next/navigation'
-
+import useAuth from '@/containers/auth/hooks/useAuth';
 
 const App = () => {
   const [login, setLogin] = useState(true);
   const [show, setShow] = React.useState(false);
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
-  const router = useRouter();
+  const { mutate, loginLoading, userRegister } = useAuth();
   const handleClick = () => setShow(!show);
 
   const handleLogin = (data: FormData) => {
-    console.log(data); // Giriş verilerini konsola yazdır
-    router.push('/events');
+    mutate(data);
+    console.log("ewqweq")
 
   };
 
   const handleRegister = (data: FormData) => {
-    console.log(data); // Kayıt verilerini konsola yazdır
+    userRegister(data);
   };
 
   const switchForm = () => {
